@@ -51,7 +51,7 @@ public class BookManager {
         String content = "";
         for (Book item : items) {
             content = content + item.getId() + "|" + item.getAuthor() + "|" + item.getName() + "\n";
-            Files.writeString(Path.of(path), content, StandardCharsets.UTF_8);
         }
+        Files.writeString(Path.of(path), content, StandardCharsets.UTF_8);
     }
 }

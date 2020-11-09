@@ -1,3 +1,4 @@
-1|Arthur Conan Doyle|The Adventures of Sherlock Holmes
-2|Robert Louis Stevenson|Treasure Island
-3|Daniel Defoe|Robinson Crusoe
+1|Arthur Conan Doyle|The Adventures of Sherlock Holmes|200руб.22коп.
+2|Robert Louis Stevenson|Treasure Island|100руб.11коп.
+3|Daniel Defoe|Robinson Crusoe|155руб.50коп.
+4|Discont-prize|Book Cover|0руб.0коп.

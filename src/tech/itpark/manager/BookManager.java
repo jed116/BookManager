@@ -28,21 +28,34 @@ public class BookManager {
             item.setId(nextId);
             nextId++;
             items.add(item);
+            return;
         }
-        else{
-            Book saved = getBookById(item.getId());
-            if (saved != null){
-                saved.setAuthor(item.getAuthor());
-                saved.setName(item.getName());
-            }
+        Book saved = getBookById(item.getId());
+        if (saved != null){
+            saved.setAuthor(item.getAuthor());
+            saved.setName(item.getName());
+        }
 
-        }
+
     }
     public void importFile(String path) throws IOException {
         List<String> lines = Files.readAllLines(Paths.get("Books.txt"), StandardCharsets.UTF_8);
         for(String line: lines){
             final String[] words = line.split("\\|");
-            save(new Book(0, words[0], words[1]));
+            if (words.length < 3){
+                continue;
+            }
+            String name = words[0].trim();
+            String author = words[1].trim();
+            if ((name.length() == 0) || (author.length() == 0))
+            {
+                continue;
+            }
+            String price = words[2].trim().replaceAll("[^0-9]", "");
+            if (price.length() == 0){
+                continue;
+            }
+            save(new Book(0, name, author, Integer.parseInt(price)));
         }
     }
 
@@ -50,7 +63,8 @@ public class BookManager {
         Files.deleteIfExists(Paths.get(path));
         String content = "";
         for (Book item : items) {
-            content = content + item.getId() + "|" + item.getAuthor() + "|" + item.getName() + "\n";
+            int price = item.getPrice();
+            content = content + item.getId() + "|" + item.getAuthor() + "|" + item.getName() + "|" + (price/100) + "руб." + (price%100) + "коп." + "\n";
         }
         Files.writeString(Path.of(path), content, StandardCharsets.UTF_8);
     }

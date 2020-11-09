@@ -1,3 +1,4 @@
-The Adventures of Sherlock Holmes|Arthur Conan Doyle
-Treasure Island|Robert Louis Stevenson
-Robinson Crusoe|Daniel Defoe
+The Adventures of Sherlock Holmes   |  Arthur Conan Doyle |   200.22
+Treasure Island|Robert Louis Stevenson|100,11
+Robinson Crusoe  |  Daniel Defoe|  155 р. 50 к.
+Book Cover | Discont-prize | 0.00
